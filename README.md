@@ -6,4 +6,5 @@
 3、Postgis的学习操作；
 4、OpenLayer的学习操作；
 5、Cesium的学习操作;
+6、三维模型知识学习；
 
