@@ -21,16 +21,16 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Paths;
 
-public class GisShapeWrite {
+
+public class ShapeFileWrite {
 
     private static GeometryFactory geometryFactory = JTSFactoryFinder.getGeometryFactory(null);
 
-    @Test
-    public void testCrs() throws FactoryException, IOException {
-        String newShapeName = "D:\\test\\shp\\test.shp";
-        ShapefileDataStore shapefileDataStore = new ShapefileDataStore(Paths.get(newShapeName).toUri().toURL());
-    }
-
+    /**
+     * 使用datastore写shape文件
+     * @throws IOException
+     * @throws FactoryException
+     */
     @Test
     public void writeShapeFromDataStore() throws IOException, FactoryException {
         String newShapeName = "D:\\test\\shp\\test.shp";
@@ -78,7 +78,7 @@ public class GisShapeWrite {
      */
     private FeatureCollection createSimpleFeatures(SimpleFeatureType simpleFeatureType) throws FactoryException {
         SimpleFeature simpleFeature = createSimpleFeature(simpleFeatureType);
-        //构建属性要素集合，当然simpleFeature可以创建一个集合
+        //构建属性要素集合，当然simpleFeature一般是一个几何
         return new ListFeatureCollection(simpleFeatureType,simpleFeature);
     }
 
