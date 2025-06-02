@@ -153,7 +153,7 @@ public class ShapeFileReader {
     }
 
     @Test
-    public void testSpatialIntersect() throws CQLException, IOException {
+    public void testSpatialIntersect() throws CQLException, IOException, ParseException {
         // 1. 使用 WKT 格式定义参考几何
         String geomWKT = "POLYGON((106 36.5, 107 36.5, 107 37.5, 106 37.5, 106 36.5))";
         String ecql = "INTERSECTS(the_geom, " + geomWKT + ")";
